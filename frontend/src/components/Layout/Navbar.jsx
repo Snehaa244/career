@@ -12,9 +12,10 @@ const Navbar = () => {
   const navigateTo = useNavigate();
 
   const handleLogout = async () => {
+    const API_BASE_URL = import.meta.env.VITE_API_URL || "https://careerconnectfullstack-production.up.railway.app";
     try {
       const response = await axios.get(
-        "http://localhost:4000/api/v1/user/logout",
+        `${API_BASE_URL}/api/v1/user/logout`,
         {
           withCredentials: true,
         }
@@ -31,8 +32,8 @@ const Navbar = () => {
   return (
     <nav className={"navbarShow"}>
       <div className="container">
-        <div className="logo text-white mt-5">
-         CarrerConnect
+        <div className="logo text-white">
+          CarrerConnect
         </div>
         <ul className={!show ? "menu" : "show-menu menu"}>
           <li>
@@ -87,3 +88,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
