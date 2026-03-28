@@ -18,9 +18,10 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    const API_BASE_URL = import.meta.env.VITE_API_URL || "https://careerconnectfullstack-production.up.railway.app";
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/user/login",
+        `${API_BASE_URL}/api/v1/user/login`,
         { email, password, role },
         {
           headers: {
@@ -36,7 +37,7 @@ const Login = () => {
       setRole("");
       setIsAuthorized(true);
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response?.data?.message || "Something went wrong. Please check your network or CORS settings.");
     }
   };
 
@@ -104,3 +105,4 @@ const Login = () => {
 };
 
 export default Login;
+
