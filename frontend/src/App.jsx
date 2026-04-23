@@ -36,7 +36,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      let API_BASE_URL = import.meta.env.VITE_API_URL || "https://careerconnectfullstack-production.up.railway.app";
+      let API_BASE_URL = import.meta.env.VITE_API_URL || "https://career-rhae.onrender.com";
       if (API_BASE_URL && !API_BASE_URL.startsWith("http")) {
         API_BASE_URL = `https://${API_BASE_URL}`;
       }
