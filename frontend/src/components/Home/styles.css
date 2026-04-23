@@ -7,4 +7,8 @@
 @keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5b07081137e5d7f9889eacf80303dbf9cd55e7b1

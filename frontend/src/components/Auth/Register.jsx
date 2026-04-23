@@ -20,11 +20,17 @@ const Register = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+<<<<<<< HEAD
     e.preventDefault();
     const API_BASE_URL = import.meta.env.VITE_API_URL || "https://careerconnectfullstack-production.up.railway.app";
     try {
       const { data } = await axios.post(
         `${API_BASE_URL}/api/v1/user/register`,
+=======
+    try {
+      const { data } = await axios.post(
+        "http://localhost:4000/api/v1/user/register",
+>>>>>>> 5b07081137e5d7f9889eacf80303dbf9cd55e7b1
         { name, phone, email, role, password },
         {
           headers: {
@@ -41,7 +47,11 @@ const Register = () => {
       setRole("");
       setIsAuthorized(true);
     } catch (error) {
+<<<<<<< HEAD
       toast.error(error.response?.data?.message || "Something went wrong. Please check your network or CORS settings.");
+=======
+      toast.error(error.response.data.message);
+>>>>>>> 5b07081137e5d7f9889eacf80303dbf9cd55e7b1
     }
   };
 
@@ -56,7 +66,11 @@ const Register = () => {
         <div className="container">
           <div className="header">
             {/* <img src="/careerconnect-black.png" alt="logo" /> */}
+<<<<<<< HEAD
             <h3 className="text-white">Create a new account</h3>
+=======
+            <h3>Create a new account</h3>
+>>>>>>> 5b07081137e5d7f9889eacf80303dbf9cd55e7b1
           </div>
           <form className="text-white">
             <div className="inputTag ">

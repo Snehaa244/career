@@ -14,7 +14,11 @@ config({ path: "./config/config.env" });
 
 app.use(
   cors({
+<<<<<<< HEAD
     origin: process.env.FRONTEND_URL ? process.env.FRONTEND_URL.split(",") : ["https://career-three-sooty.vercel.app"],
+=======
+    origin: [process.env.FRONTEND_URL],
+>>>>>>> 5b07081137e5d7f9889eacf80303dbf9cd55e7b1
     method: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })

@@ -95,4 +95,8 @@ function Hero() {
   );
 }
 
+<<<<<<< HEAD
 export default Hero;
+=======
+export default Hero;
+>>>>>>> 5b07081137e5d7f9889eacf80303dbf9cd55e7b1

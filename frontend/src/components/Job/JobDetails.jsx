@@ -11,9 +11,14 @@ const JobDetails = () => {
   const { isAuthorized, user } = useContext(Context);
 
   useEffect(() => {
+<<<<<<< HEAD
     const API_BASE_URL = import.meta.env.VITE_API_URL || "https://careerconnectfullstack-production.up.railway.app";
     axios
       .get(`${API_BASE_URL}/api/v1/job/${id}`, {
+=======
+    axios
+      .get(`http://localhost:4000/api/v1/job/${id}`, {
+>>>>>>> 5b07081137e5d7f9889eacf80303dbf9cd55e7b1
         withCredentials: true,
       })
       .then((res) => {

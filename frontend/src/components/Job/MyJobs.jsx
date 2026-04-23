@@ -15,10 +15,16 @@ const MyJobs = () => {
   //Fetching all jobs
   useEffect(() => {
     const fetchJobs = async () => {
+<<<<<<< HEAD
       const API_BASE_URL = import.meta.env.VITE_API_URL || "https://careerconnectfullstack-production.up.railway.app";
       try {
         const { data } = await axios.get(
           `${API_BASE_URL}/api/v1/job/getmyjobs`,
+=======
+      try {
+        const { data } = await axios.get(
+          "http://localhost:4000/api/v1/job/getmyjobs",
+>>>>>>> 5b07081137e5d7f9889eacf80303dbf9cd55e7b1
           { withCredentials: true }
         );
         setMyJobs(data.myJobs);
@@ -46,10 +52,16 @@ const MyJobs = () => {
 
   //Function For Updating The Job
   const handleUpdateJob = async (jobId) => {
+<<<<<<< HEAD
     const API_BASE_URL = import.meta.env.VITE_API_URL || "https://careerconnectfullstack-production.up.railway.app";
     const updatedJob = myJobs.find((job) => job._id === jobId);
     await axios
       .put(`${API_BASE_URL}/api/v1/job/update/${jobId}`, updatedJob, {
+=======
+    const updatedJob = myJobs.find((job) => job._id === jobId);
+    await axios
+      .put(`http://localhost:4000/api/v1/job/update/${jobId}`, updatedJob, {
+>>>>>>> 5b07081137e5d7f9889eacf80303dbf9cd55e7b1
         withCredentials: true,
       })
       .then((res) => {
@@ -63,9 +75,14 @@ const MyJobs = () => {
 
   //Function For Deleting Job
   const handleDeleteJob = async (jobId) => {
+<<<<<<< HEAD
     const API_BASE_URL = import.meta.env.VITE_API_URL || "https://careerconnectfullstack-production.up.railway.app";
     await axios
       .delete(`${API_BASE_URL}/api/v1/job/delete/${jobId}`, {
+=======
+    await axios
+      .delete(`http://localhost:4000/api/v1/job/delete/${jobId}`, {
+>>>>>>> 5b07081137e5d7f9889eacf80303dbf9cd55e7b1
         withCredentials: true,
       })
       .then((res) => {
