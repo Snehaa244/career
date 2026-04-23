@@ -18,7 +18,10 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const API_BASE_URL = import.meta.env.VITE_API_URL || "https://careerconnectfullstack-production.up.railway.app";
+    let API_BASE_URL = import.meta.env.VITE_API_URL || "https://careerconnectfullstack-production.up.railway.app";
+    if (API_BASE_URL && !API_BASE_URL.startsWith("http")) {
+      API_BASE_URL = `https://${API_BASE_URL}`;
+    }
     try {
       const { data } = await axios.post(
         `${API_BASE_URL}/api/v1/user/login`,
@@ -105,7 +108,3 @@ const Login = () => {
 };
 
 export default Login;
-<<<<<<< HEAD
-=======
-
->>>>>>> 5b07081137e5d7f9889eacf80303dbf9cd55e7b1

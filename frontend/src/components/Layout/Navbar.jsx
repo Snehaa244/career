@@ -12,7 +12,10 @@ const Navbar = () => {
   const navigateTo = useNavigate();
 
   const handleLogout = async () => {
-    const API_BASE_URL = import.meta.env.VITE_API_URL || "https://careerconnectfullstack-production.up.railway.app";
+    let API_BASE_URL = import.meta.env.VITE_API_URL || "https://careerconnectfullstack-production.up.railway.app";
+    if (API_BASE_URL && !API_BASE_URL.startsWith("http")) {
+      API_BASE_URL = `https://${API_BASE_URL}`;
+    }
     try {
       const response = await axios.get(
         `${API_BASE_URL}/api/v1/user/logout`,
@@ -88,7 +91,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-<<<<<<< HEAD
-=======
-
->>>>>>> 5b07081137e5d7f9889eacf80303dbf9cd55e7b1
