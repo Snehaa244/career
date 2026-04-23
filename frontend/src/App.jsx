@@ -52,6 +52,11 @@ const App = () => {
         setUser(response.data.user); // Set the logged-in user
         setIsAuthorized(true); // User is authorized
       } catch (error) {
+        console.error("API Fetch User Error:", {
+          status: error.response?.status,
+          message: error.response?.data?.message || error.message,
+          url: error.config?.url
+        });
         setIsAuthorized(false); // User is not authorized
       }
     };

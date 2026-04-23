@@ -35,5 +35,13 @@ app.use("/api/v1/job", jobRouter);
 app.use("/api/v1/application", applicationRouter);
 dbConnection();
 
+// Catch-all route for unmatched routes
+app.use((req, res, next) => {
+  res.status(404).json({
+    success: false,
+    message: `API Route not found: ${req.originalUrl}`,
+  });
+});
+
 app.use(errorMiddleware);
 export default app;

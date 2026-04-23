@@ -77,6 +77,7 @@ const Login = () => {
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  autoComplete="email"
                 />
                 <MdOutlineMailOutline />
               </div>
@@ -89,6 +90,7 @@ const Login = () => {
                   placeholder="Enter your Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  autoComplete="current-password"
                 />
                 <RiLock2Fill />
               </div>
